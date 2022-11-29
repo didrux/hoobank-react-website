@@ -1,9 +1,13 @@
 import styles from "../style";
 import { discount, robot } from "../assets";
 import GetStarted from "./GetStarted";
+import {Stats} from "./index.js";
 
 const Hero = () => {
   return (
+
+      <div className={`bg-primary ${styles.flexStart}`}>
+        <div className={`${styles.boxWidth}`}>
     <section
       id="home"
       className={`flex md:flex-row flex-col ${styles.paddingY}`}
@@ -59,6 +63,10 @@ const Hero = () => {
         <GetStarted />
       </div>
     </section>
+
+          <Stats />
+        </div>
+      </div>
   );
 };
 

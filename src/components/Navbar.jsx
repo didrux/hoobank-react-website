@@ -1,13 +1,31 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import { close, logo, menu } from "../assets";
 import { navLinks } from "../constants";
+import {Modal} from "./index.js";
 
 const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
 
+  const [modalActive, setModalActive] = useState(false)
+
+  const buttonCheck = (nav) => {
+      if (nav.id === 'profile') {
+          return (
+            <a onClick={() => setModalActive(true)}>Keks</a>
+          );
+      }
+      else {
+          return (
+              <Link to={`/${nav.id}`}>{nav.title}</Link>
+          )
+      }
+  }
+
   return (
+      <div>
     <nav className="w-full flex py-6 justify-between items-center navbar">
       <img src={logo} alt="hoobank" className="w-[124px] h-[32px]" />
 
@@ -20,7 +38,7 @@ const Navbar = () => {
             } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
             onClick={() => setActive(nav.title)}
           >
-            <a href={`/${nav.id}`}>{nav.title}</a>
+              {buttonCheck(nav)}
           </li>
         ))}
       </ul>
@@ -47,13 +65,15 @@ const Navbar = () => {
                 } ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}
                 onClick={() => setActive(nav.title)}
               >
-                <a href={`#${nav.id}`}>{nav.title}</a>
+                  {buttonCheck(nav)}
               </li>
             ))}
           </ul>
         </div>
       </div>
     </nav>
+          <Modal active={modalActive} setActive={setModalActive} />
+    </div>
   );
 };
 
