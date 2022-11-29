@@ -17,6 +17,7 @@ import Modal from "./components/Modal/Modal.jsx";
 import { useState } from "react";
 import Profile from "./components/Profile.jsx";
 import Login from "./components/Login.jsx";
+import ProtectedRoutes from "./components/ProtectedRoutes.jsx";
 
 const App = () => {
   return (
@@ -31,8 +32,10 @@ const App = () => {
         <Route path="/" element={<Hero />}></Route>
         <Route path="/home" element={<Hero />}></Route>
         <Route path="/features" element={<Features />}></Route>
-        <Route path="/profil" element={<Profile />}></Route>
-        <Route path="/login" element={<Login />}></Route>
+          <Route path="/login" element={<Login />} />
+          <Route element={<ProtectedRoutes />}>
+              <Route path="/profil" element={<Profile />} />
+          </Route>
       </Routes>
 
       <div className={`${styles.paddingX} ${styles.flexCenter}`}>

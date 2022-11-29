@@ -4,7 +4,15 @@ import { discount, robot } from "../assets/index.js";
 import GetStarted from "./GetStarted.jsx";
 import { Stats } from "./index.js";
 
+
 class Profile extends Component {
+
+
+  logoutClick() {
+    localStorage.removeItem('auth');
+    console.log("Removed");
+  }
+
   render() {
     return (
       <div>
@@ -87,7 +95,7 @@ class Profile extends Component {
                         View Profile
                       </button>
 
-                      <button className="w-full rounded-xl border-2 border-blue-500 bg-white px-3 py-2 font-semibold text-blue-500 hover:bg-blue-500 hover:text-white">
+                      <button onClick={() => this.logoutClick()} className="w-full rounded-xl border-2 border-blue-500 bg-white px-3 py-2 font-semibold text-blue-500 hover:bg-blue-500 hover:text-white">
                         Logout
                       </button>
                     </div>
