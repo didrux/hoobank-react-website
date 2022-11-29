@@ -9,12 +9,10 @@ const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
 
-  const [modalActive, setModalActive] = useState(false)
-
   const buttonCheck = (nav) => {
       if (nav.id === 'profile') {
           return (
-            <a onClick={() => setModalActive(true)}>Keks</a>
+            <a>Keks</a>
           );
       }
       else {
@@ -72,7 +70,6 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
-          <Modal active={modalActive} setActive={setModalActive} />
     </div>
   );
 };

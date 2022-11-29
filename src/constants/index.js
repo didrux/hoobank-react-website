@@ -25,7 +25,7 @@ export const navLinks = [
     title: "Features",
   },
   {
-    id: "profile",
+    id: "profil",
     title: "Profile",
   },
 ];

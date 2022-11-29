@@ -15,6 +15,7 @@ import { Route, Routes } from "react-router-dom";
 import Features from "./components/Features";
 import Modal from "./components/Modal/Modal.jsx";
 import {useState} from "react";
+import Profile from "./components/Profile.jsx";
 
 const App = () => {
 
@@ -31,6 +32,7 @@ const App = () => {
                 <Route path="/" element={<Hero/>}></Route>
                 <Route path="/home" element={<Hero/>}></Route>
                 <Route path="/features" element={<Features/>}></Route>
+                <Route path="/profil" element={<Profile/>}></Route>
             </Routes>
 
             <div className={`${styles.paddingX} ${styles.flexCenter}`}>
