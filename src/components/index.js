@@ -21,5 +21,5 @@ export {
   Footer,
   Testimonials,
   Hero,
-  Modal
+  Modal,
 };
