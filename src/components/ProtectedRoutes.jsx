@@ -1,16 +1,16 @@
 import { Navigate, Outlet } from "react-router-dom";
 
 const useAuth = () => {
-    const user = { loggedIn: false };
-    if (localStorage.getItem('auth') === 'true') {
-        user.loggedIn = true;
-    }
-    return user && user.loggedIn;
+  const user = { loggedIn: false };
+  if (localStorage.getItem("auth") === "true") {
+    user.loggedIn = true;
+  }
+  return user && user.loggedIn;
 };
 
 const ProtectedRoutes = () => {
-    const isAuth = useAuth();
-    return isAuth ? <Outlet /> : <Navigate to="/login" />;
+  const isAuth = useAuth();
+  return isAuth ? <Outlet /> : <Navigate to="/login" />;
 };
 
 export default ProtectedRoutes;

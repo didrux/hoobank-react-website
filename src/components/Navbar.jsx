@@ -9,14 +9,6 @@ const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
 
-  const buttonCheck = (nav) => {
-    if (nav.id === "profile") {
-      return <a>Keks</a>;
-    } else {
-      return <Link to={`/${nav.id}`}>{nav.title}</Link>;
-    }
-  };
-
   return (
     <div>
       <nav className="w-full flex py-6 justify-between items-center navbar">
@@ -31,7 +23,7 @@ const Navbar = () => {
               } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
               onClick={() => setActive(nav.title)}
             >
-              {buttonCheck(nav)}
+              <Link to={`/${nav.id}`}>{nav.title}</Link>
             </li>
           ))}
         </ul>
@@ -58,7 +50,7 @@ const Navbar = () => {
                   } ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}
                   onClick={() => setActive(nav.title)}
                 >
-                  {buttonCheck(nav)}
+                  <Link to={`/${nav.id}`}>{nav.title}</Link>;
                 </li>
               ))}
             </ul>

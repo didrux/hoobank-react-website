@@ -3,19 +3,23 @@ import styles from "../style.js";
 import { discount, robot } from "../assets/index.js";
 import GetStarted from "./GetStarted.jsx";
 import { Stats } from "./index.js";
-
+import { Navigate } from "react-router-dom";
 
 class Profile extends Component {
-
+  state = { logoutCondition: null };
 
   logoutClick() {
-    localStorage.removeItem('auth');
+    localStorage.removeItem("auth");
     console.log("Removed");
+    this.setState({ logoutCondition: true });
   }
 
   render() {
+    let { logoutCondition } = this.state;
+
     return (
       <div>
+        {logoutCondition && <Navigate to="/home" />}
         <div className={`bg-primary ${styles.flexStart}`}>
           <div className={`${styles.boxWidth}`}>
             <section
@@ -95,7 +99,10 @@ class Profile extends Component {
                         View Profile
                       </button>
 
-                      <button onClick={() => this.logoutClick()} className="w-full rounded-xl border-2 border-blue-500 bg-white px-3 py-2 font-semibold text-blue-500 hover:bg-blue-500 hover:text-white">
+                      <button
+                        onClick={() => this.logoutClick()}
+                        className="w-full rounded-xl border-2 border-blue-500 bg-white px-3 py-2 font-semibold text-blue-500 hover:bg-blue-500 hover:text-white"
+                      >
                         Logout
                       </button>
                     </div>

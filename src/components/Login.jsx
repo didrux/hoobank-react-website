@@ -4,31 +4,30 @@ import { discount, robot } from "../assets/index.js";
 import GetStarted from "./GetStarted.jsx";
 import { Stats } from "./index.js";
 import ProtectedRoutes from "./ProtectedRoutes.jsx";
-import {Navigate} from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 // const kek = document.getElementById("exampleFormControlInput1")
 
 class Login extends Component {
-
   state = { user: null };
 
   loginClick() {
-    if (document.getElementById("exampleFormControlInput1").value === "Admin" && document.getElementById("exampleFormControlInput2").value === "12345") {
-      localStorage.setItem('auth', 'true');
-      this.setState({user: true})
-    }
-    else {
+    if (
+      document.getElementById("exampleFormControlInput1").value === "Admin" &&
+      document.getElementById("exampleFormControlInput2").value === "12345"
+    ) {
+      localStorage.setItem("auth", "true");
+      this.setState({ user: true });
+    } else {
       console.log("fuck you");
     }
 
     console.log("whadddup");
   }
 
-
   componentDidMount() {
-    const emailInput = document.getElementById("exampleFormControlInput1")
-    const passwordInput = document.getElementById("exampleFormControlInput2")
-
+    const emailInput = document.getElementById("exampleFormControlInput1");
+    const passwordInput = document.getElementById("exampleFormControlInput2");
   }
 
   render() {
@@ -37,6 +36,7 @@ class Login extends Component {
 
     return (
       <div>
+        {user && <Navigate to="/profil" />}
         <div className={`bg-primary ${styles.flexStart}`}>
           <div className={`${styles.boxWidth}`}>
             <section
@@ -155,9 +155,9 @@ class Login extends Component {
                               Forgot password?
                             </a>
                           </div>
-                          {user && (<Navigate to="/home" />)}
                           <div className="text-center lg:text-left">
-                            <button onClick={() => this.loginClick()}
+                            <button
+                              onClick={() => this.loginClick()}
                               type="button"
                               className="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
                             >

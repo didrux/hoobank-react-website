@@ -66,8 +66,6 @@ const Hero = () => {
             <GetStarted />
           </div>
         </section>
-
-        <Stats />
       </div>
     </div>
   );
