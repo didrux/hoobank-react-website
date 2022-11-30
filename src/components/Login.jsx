@@ -4,16 +4,18 @@ import { discount, robot } from "../assets/index.js";
 import GetStarted from "./GetStarted.jsx";
 import { Stats } from "./index.js";
 import ProtectedRoutes from "./ProtectedRoutes.jsx";
+import {Navigate} from "react-router-dom";
 
 // const kek = document.getElementById("exampleFormControlInput1")
 
 class Login extends Component {
 
-
+  state = { user: null };
 
   loginClick() {
     if (document.getElementById("exampleFormControlInput1").value === "Admin" && document.getElementById("exampleFormControlInput2").value === "12345") {
       localStorage.setItem('auth', 'true');
+      this.setState({user: true})
     }
     else {
       console.log("fuck you");
@@ -30,7 +32,7 @@ class Login extends Component {
   }
 
   render() {
-
+    let { user } = this.state;
     // const kek = document.getElementById("exampleFormControlInput1")
 
     return (
@@ -153,7 +155,7 @@ class Login extends Component {
                               Forgot password?
                             </a>
                           </div>
-
+                          {user && (<Navigate to="/home" />)}
                           <div className="text-center lg:text-left">
                             <button onClick={() => this.loginClick()}
                               type="button"
