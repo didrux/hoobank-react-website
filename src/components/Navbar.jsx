@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 import { close, logo, menu } from "../assets";
 import { navLinks } from "../constants";
-import { Modal } from "./index.js";
 
 const Navbar = () => {
   const [active, setActive] = useState("Home");

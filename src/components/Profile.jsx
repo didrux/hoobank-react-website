@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import styles from "../style.js";
-import { discount, robot } from "../assets/index.js";
-import GetStarted from "./GetStarted.jsx";
-import { Stats } from "./index.js";
 import { Navigate } from "react-router-dom";
 
 class Profile extends Component {

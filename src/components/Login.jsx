@@ -1,12 +1,6 @@
 import React, { Component } from "react";
 import styles from "../style.js";
-import { discount, robot } from "../assets/index.js";
-import GetStarted from "./GetStarted.jsx";
-import { Stats } from "./index.js";
-import ProtectedRoutes from "./ProtectedRoutes.jsx";
 import { Navigate } from "react-router-dom";
-
-// const kek = document.getElementById("exampleFormControlInput1")
 
 class Login extends Component {
   state = { user: null };
@@ -19,24 +13,16 @@ class Login extends Component {
       localStorage.setItem("auth", "true");
       this.setState({ user: true });
     } else {
-      console.log("fuck you");
+      console.log("");
     }
-
-    console.log("whadddup");
-  }
-
-  componentDidMount() {
-    const emailInput = document.getElementById("exampleFormControlInput1");
-    const passwordInput = document.getElementById("exampleFormControlInput2");
   }
 
   render() {
     let { user } = this.state;
-    // const kek = document.getElementById("exampleFormControlInput1")
 
     return (
       <div>
-        {user && <Navigate to="/profil" />}
+        {user && <Navigate to="/profile" />}
         <div className={`bg-primary ${styles.flexStart}`}>
           <div className={`${styles.boxWidth}`}>
             <section

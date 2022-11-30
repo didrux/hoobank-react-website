@@ -1,20 +1,7 @@
 import styles from "./style";
-import {
-  Billing,
-  Business,
-  CardDeal,
-  Clients,
-  CTA,
-  Footer,
-  Navbar,
-  Stats,
-  Testimonials,
-  Hero,
-} from "./components";
+import { Footer, Navbar, Hero } from "./components";
 import { Route, Routes } from "react-router-dom";
 import Features from "./components/Features";
-import Modal from "./components/Modal/Modal.jsx";
-import { useState } from "react";
 import Profile from "./components/Profile.jsx";
 import Login from "./components/Login.jsx";
 import ProtectedRoutes from "./components/ProtectedRoutes.jsx";
@@ -34,7 +21,7 @@ const App = () => {
         <Route path="/features" element={<Features />}></Route>
         <Route path="/login" element={<Login />} />
         <Route element={<ProtectedRoutes />}>
-          <Route path="/profil" element={<Profile />} />
+          <Route path="/profile" element={<Profile />} />
         </Route>
       </Routes>
 
