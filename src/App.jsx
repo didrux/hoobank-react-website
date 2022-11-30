@@ -32,10 +32,10 @@ const App = () => {
         <Route path="/" element={<Hero />}></Route>
         <Route path="/home" element={<Hero />}></Route>
         <Route path="/features" element={<Features />}></Route>
-          <Route path="/login" element={<Login />} />
-          <Route element={<ProtectedRoutes />}>
-              <Route path="/profil" element={<Profile />} />
-          </Route>
+        <Route path="/login" element={<Login />} />
+        <Route element={<ProtectedRoutes />}>
+          <Route path="/profil" element={<Profile />} />
+        </Route>
       </Routes>
 
       <div className={`${styles.paddingX} ${styles.flexCenter}`}>
