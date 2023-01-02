@@ -2,7 +2,7 @@
   "name": "hoobank",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://didrux.github.io/",
+  "homepage": "https://didrux.github.io/hoobank-react-website/",
   "type": "module",
   "scripts": {
     "dev": "vite",
